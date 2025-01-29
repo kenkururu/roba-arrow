@@ -3,48 +3,32 @@
 #include "boards/shields/Test/roBa_R.overlay"
 &trackball {
     automouse-layer = <MOUSE>;
-    scroll-layers = <9>;
+    scroll-layers = <3 9>;
     // snipe-layers = <3>;
+};
 
-    arrows {
-        layers = <3>;
-        bindings =
-            <&kp RIGHT_ARROW>,
-            <&kp LEFT_ARROW>,
-            <&kp UP_ARROW>,
-            <&kp DOWN_ARROW>;
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
-        tick = <10>;
+/ {
+    input_processors {
+        ip_arrows: ip_arrows {
+            compatible = "zmk,input-processor-behaviors";
+            type = <INPUT_EV_REL>;
+            #input-processor-cells = <0>;
+            codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+            bindings = <&kp LEFT_ARROW>, <&kp UP_ARROW>;
+        };
     };
 
-    volume {
-        layers = <MEDIA>;
-        bindings =
-                <&none>,
-                <&none>,
-                <&kp C_VOLUME_UP>,
-                <&kp C_VOLUME_DOWN>;
-    };
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
 
-    alt_tab {
-        layers = <4>;
-        bindings =
-            <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            <&kp UP_ARROW>,
-            <&kp DOWN_ARROW>;
-
-        tick = <10>;
-    };
-
-    alt_tab2 {
-        layers = <5>;
-        bindings =
-            <&kp TAB>,
-            <&kp LS(TAB)>,
-            <&kp UP_ARROW>,
-            <&kp DOWN_ARROW>;
-
-        tick = <80>;
+        arrows {
+            layers = <3>;
+            input-processors = <&ip_arrows>;
+            process-next;
+        };
     };
 };
