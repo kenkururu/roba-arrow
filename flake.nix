@@ -22,15 +22,15 @@
         board = "seeeduino_xiao_ble";
         shield = "roBa_%PART% rgbled_adapter";
         parts = [ "R" "L" ];
-		centralPart = "R";
         # parts = [ "R" ];
         # parts = [ "L" ];
         extraCmakeFlags = [
 			"-DCONFIG_NEWLIB_LIBC=y"
 		];
-
-        zephyrDepsHash = "sha256-r2BxlXWhhE8cdU/W1qdxUhPdYZtb1dTmun0smwaNdwM=";
 		enableZmkStudio = true;
+		toolchain = "zephyr-full";
+
+        zephyrDepsHash = "sha256-Vi4+owQhw8VRNQaBayMQEKxLdAN6EUalcIOYwB6+ZDI=";
 
         meta = {
           description = "ZMK firmware";
