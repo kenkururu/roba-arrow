@@ -22,13 +22,11 @@
         board = "seeeduino_xiao_ble";
         shield = "roBa_%PART% rgbled_adapter";
         parts = [ "R" "L" ];
-        # parts = [ "R" ];
-        # parts = [ "L" ];
         extraCmakeFlags = [
-			"-DCONFIG_NEWLIB_LIBC=y"
-		];
-		enableZmkStudio = true;
-		toolchain = "zephyr-full";
+          "-DCONFIG_NEWLIB_LIBC=y"
+          "-DCONFIG_CBPRINTF_LIBC_SUBSTS=y"
+        ];
+        enableZmkStudio = true;
 
         zephyrDepsHash = "sha256-Vi4+owQhw8VRNQaBayMQEKxLdAN6EUalcIOYwB6+ZDI=";
 
