@@ -21,12 +21,12 @@
 
         board = "seeeduino_xiao_ble";
         shield = "roBa_%PART% rgbled_adapter";
-        parts = [ "R" "L" ];
-        extraCmakeFlags = [
-          "-DCONFIG_NEWLIB_LIBC=y"
-          "-DCONFIG_CBPRINTF_LIBC_SUBSTS=y"
-        ];
+        parts = [ "R" "L" ]; # central should be first for enableZmkStudio to work
         enableZmkStudio = true;
+        extraCmakeFlags = [
+          "-DCONFIG_NEWLIB_LIBC=y" # required for pmw3610 driver's scroll acceleration feature
+          "-DCONFIG_CBPRINTF_LIBC_SUBSTS=y" # required if enableZmkStudio = true
+        ];
 
         zephyrDepsHash = "sha256-Vi4+owQhw8VRNQaBayMQEKxLdAN6EUalcIOYwB6+ZDI=";
 
