@@ -540,19 +540,19 @@
 
         LANG1_ETD {
             bindings = <
-&trans  &trans  &trans  &trans                            &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans                            &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans                            &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &eager_tap_dance LANG1 LANG1_ETD  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                              &kp RA(ENTER)  &kp F  &kp COMMA  &kp Q  &kp P
+&trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT_WIN    &kp G          &kp J  &kp D      &kp L  &kp PERIOD
+&trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT_SHIFT  &kp B          &kp C  &kp V      &kp X  &kp Z
+&trans  &trans  &trans  &trans  &trans  &trans      &kp JP_AT       &none                                   &mt RCTRL DEL
             >;
         };
 
         NUMPAD_AND_ARROWS {
             bindings = <
-&kp PLUS           &kp N7              &kp N8               &kp N9  &kp MINUS                               &td_alt_f4    &kp LC(HOME)  &trans        &kp LC(END)  &to_kp 5 TAB
-&kp ASTERISK       &kp N4              &kp N5               &kp N6  &kp SLASH    &kp EQUAL      &trans      &kp F5        &kp HOME      &kp UP_ARROW  &kp END      &to_kp 6 TAB
-&mt LEFT_SHIFT N0  &kp N1              &kp N2               &kp N3  &kp PERCENT  &kp SPACE      &trans      &kp LC(LEFT)  &kp LEFT      &kp DOWN      &kp RIGHT    &kp LC(RIGHT)
-&mt LCTRL COMMA    &mt LEFT_WIN COMMA  &mt LEFT_ALT PERIOD  &trans  &kp ENTER    &trans         &kp DELETE  &trans                                                 &trans
+&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                                &kp SEMI       &kp LEFT_ALT      &kp UP_ARROW          &kp TAB          &kp PSCRN
+&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp HOME     &kp JP_COLON   &kp LEFT_ARROW    &mt RCTRL DOWN_ARROW  &kp RIGHT_ARROW  &kp LEFT_WIN
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL                    &none        &kp END        &kp LS(NUMBER_1)  &kp LS(SLASH)         &kp JP_YEN       &kp JP_UNDERSCORE
+&trans                      &trans           &trans           &trans           &trans        &trans                       &kp PAGE_UP  &kp PAGE_DOWN                                                           &kp JP_DQUOTE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PLUS) LC(MINUS)>;
@@ -560,19 +560,19 @@
 
         FUNCTIONS_AND_SYMBOLS {
             bindings = <
-&to_kp 5 TAB  &kp F1        &kp F2        &kp F3   &td_alt_f4                             &kp AT_SIGN       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOUBLE_QUOTES  &td_colon
-&to_kp 6 TAB  &kp F6        &kp F7        &kp F8   &kp F5      &trans      &kp DOLLAR     &kp HASH          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SINGLE_QUOTE   &kp TILDE
-&trans        &kp F9        &kp F10       &kp F11  &kp F12     &trans      &kp BSLH       &kp AMPERSAND     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE          &kp PIPE
-&kp LCTRL     &kp LEFT_WIN  &kp LEFT_ALT  &trans   &trans      &trans      &kp LESS_THAN  &kp GREATER_THAN                                                                  &kp DOLLAR
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                            &kp F12      &kp F7  &kp F8  &kp F9  &kp LEFT_SHIFT
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans       &kp F11      &kp F4  &kp F5  &kp F6  &kp LEFT_ALT
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &kp JP_EISU  &kp F10      &kp F1  &kp F2  &kp F3  &kp RCTRL
+&trans          &trans                  &trans          &trans                   &trans   &trans      &trans       &kp JP_KANA                          &trans
             >;
         };
 
         MISC {
             bindings = <
-&to_kp 5 TAB          &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &td_alt_f4                                                         &td_alt_f4  &kp LC(W)                 &kp LS(LC(T))          &kp LC(T)          &to_kp 5 TAB
-&to_kp 6 TAB          &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &kp F5            &trans               &kp C_VOLUME_UP             &kp F5      &kp_exit_AML LC(PAGE_UP)  &kp_exit_AML UP_ARROW  &kp LC(PAGE_DOWN)  &to_kp 6 TAB
-&kp LA(LC(LG(DOWN)))  &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(RIGHT_ARROW)      &screenshot_copy  &screensot_save      &kp_exit_AML C_VOLUME_DOWN  &kp K_MUTE  &kp LA(LEFT)              &kp DOWN               &kp LA(RIGHT)      &trans
-&trans                &trans                  &trans            &trans                   &trans            &trans               &kp DELETE                  &trans                                                                          &trans
+&trans  &trans  &trans  &trans  &trans                     &trans  &trans    &trans    &none  &none
+&trans  &trans  &trans  &trans  &trans  &trans      &none  &none   &mkp MB1  &mkp MB2  &none  &mo 5
+&trans  &trans  &trans  &trans  &trans  &trans      &none  &mo 6   &mkp MB1  &mkp MB2  &none  &mo 5
+&trans  &trans  &trans  &trans  &trans  &trans      &mo 3  &mo 1                              &none
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -580,19 +580,19 @@
 
         ALT_TAB {
             bindings = <
-&kp TAB      &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &kp TAB
-&kp LS(TAB)  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp LS(TAB)
-&trans       &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans       &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                            &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans                                                  &bt BT_CLR
             >;
         };
 
         CTRL_TAB {
             bindings = <
-&kp LS(TAB)  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &kp LS(TAB)
-&kp TAB      &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp TAB
-&kp LS(TAB)  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp LS(TAB)
-&trans       &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans        &trans        &trans        &trans                               &kp JP_EQUAL  &kp N7        &kp N8        &kp N9        &kp MINUS
+&trans  &trans        &trans        &trans        &trans  &trans      &none            &kp SLASH     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp JP_PLUS
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &kp JP_ASTERISK  &none         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0
+&trans  &trans        &trans        &trans        &trans  &trans      &trans           &none                                                   &kp PERIOD
             >;
         };
 
